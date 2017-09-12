@@ -2,6 +2,7 @@ const express = require('express')
 const hbs = require('hbs')  //hbs is nothing more than an express wrapper for handlebars. It makes it easier to integrate when working with express.! handlebars - templating engine based on moustache.
 // nodemon won't watch hbs files. so when running the server use - nodemon server.js -e js,hbs
 const fs = require('fs')
+const port = process.env.PORT || 3000  // port from system env is for heroku. to keep running it at localhost, default is specified at 3000.
 
 var app = express();
 
@@ -77,6 +78,6 @@ app.get('/bad', (req,res) =>{
 	})
 })
 
-app.listen(3000,()=>{
-	console.log("Server is up at port 3000")
+app.listen(port,()=>{
+	console.log(`Server is up at port ${port}`)
 })  //port number. usually devs use 3000(?)               
