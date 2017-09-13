@@ -20,6 +20,7 @@ app.use((req,res,next) =>{  //next is used to tell express that we are done.unle
 	next()
 })
 
+// Maintenance page is activated(code is uncommented) when the site goes into maintenance mode.
 // app.use((req,res,next) =>{
 // 	res.render('maintenance.hbs', {
 // 		pageTitle: 'Maintenance Page'
@@ -58,6 +59,13 @@ app.get('/about',(req,res) =>{
 	// res.send("About Page") 
 	res.render('about.hbs', {
 		pageTitle: 'About Page',
+	})
+})
+
+app.get('/projects',(req,res) =>{
+	// res.send("About Page") 
+	res.render('projects.hbs', {
+		pageTitle: 'Projects Page',
 	})
 })
 
